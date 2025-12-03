@@ -1,10 +1,7 @@
 advent_of_code::solution!(2);
 
 fn parse_input(input: &str) -> Vec<Vec<&str>> {
-    input
-        .split("," )
-        .map(|s| s.split("-").collect() )
-        .collect()
+    input.split(",").map(|s| s.split("-").collect()).collect()
 }
 
 fn check_part_one(num: u64) -> bool {
@@ -12,8 +9,7 @@ fn check_part_one(num: u64) -> bool {
     if s.len() % 2 != 0 {
         return false;
     }
-    s[0..(s.len()/2)] == s[(s.len()/2)..s.len()]
-
+    s[0..(s.len() / 2)] == s[(s.len() / 2)..s.len()]
 }
 
 fn check_part_two(num: u64) -> bool {
@@ -24,7 +20,11 @@ fn check_part_two(num: u64) -> bool {
     }
 
     // 1. all digits are the same
-    if s.chars().next().map(|f| s.chars().all(|c| c == f)).unwrap_or(false) {
+    if s.chars()
+        .next()
+        .map(|f| s.chars().all(|c| c == f))
+        .unwrap_or(false)
+    {
         return true;
     }
 
@@ -69,7 +69,6 @@ fn check_part_two(num: u64) -> bool {
 }
 
 pub fn part_one(input: &str) -> Option<u64> {
-
     let ranges = parse_input(input);
     let mut sum = 0;
 

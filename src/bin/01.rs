@@ -10,7 +10,6 @@ fn parse_input(input: &str) -> Vec<i64> {
 }
 
 pub fn part_one(input: &str) -> Option<u64> {
-
     let parsed: Vec<i64> = parse_input(input);
 
     let mut position: i64 = 50;
@@ -28,7 +27,6 @@ pub fn part_one(input: &str) -> Option<u64> {
 }
 
 pub fn part_two(input: &str) -> Option<u64> {
-
     let parsed: Vec<i64> = parse_input(input);
 
     let mut position: i64 = 50;
@@ -40,7 +38,9 @@ pub fn part_two(input: &str) -> Option<u64> {
         count += (step1 / 100).unsigned_abs();
         step1 = step1 % 100;
 
-        if position != 0 && (step1 < 0 && position + step1 < 0) || (step1 > 0 && position + step1 >= 101) {
+        if position != 0 && (step1 < 0 && position + step1 < 0)
+            || (step1 > 0 && position + step1 >= 101)
+        {
             count += 1;
         }
 
